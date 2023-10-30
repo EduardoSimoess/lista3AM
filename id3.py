@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score
 
 from cancer import X_normalized_df, y  
 
@@ -12,6 +12,10 @@ id3_model.fit(X_train, y_train)
 
 y_pred = id3_model.predict(X_test)
 
-accuracy = accuracy_score(y_test, y_pred)
+acuracia_id3 = accuracy_score(y_test, y_pred)
 
-print("Acurácia do Modelo ID3:", accuracy)
+precisao_id3 = precision_score(y_test, y_pred, pos_label='M')
+
+revocacao_id3 = recall_score(y_test, y_pred, pos_label='M')
+
+print("Acurácia do Modelo ID3:", acuracia_id3)

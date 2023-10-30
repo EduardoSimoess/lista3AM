@@ -9,13 +9,32 @@ acurácia dos modelos todos os dados foram normalizados utilizando a técnica do
 1.2 - Os algoritmos single utilizados foram o SVM, C4.5 e o ID3. O ensemble escolhido foi a 
 random forest. Suas execuções estão descritas nos arquivos de mesmo nome.
 
-1.3 e 1.4 - O modelo com melhor desempenho foi o SVM, com uma acurácia de 97%. 
+1.3 - Foram adotas três medidas para avaliar os algoritmos, acurácia, precisão e revocação. Os 
+valores obtidos para cada um dos modelos foi o seguinte:
 
-    O C4.5 obteve uma acurácia de 92%, enquanto o ID3 obteve 89%, o que é esperado, já que o 
-C4.5 é umm algoritmo de árvore assim como o ID3 mas que conta com diversas melhorias que buscam
-aumentar o seu desemoenho. Dentre elas estão o uso de razão de ganho e a capacidade de realizar
-podas.
+    - c4.5:
+    [0.9210526315789473, 0.9302325581395349, 0.8695652173913043]
 
-    Por fim, a random forest teve o segundo melhor aproveitamento, com uma acurácia de 94%. O que
-também é esperado, já que ele combina diversas arvore de decisão, o que gera um modelo mais robusto
-comparado ao uso de uma única arvore.
+    - id3:
+    [0.9122807017543859, 0.9090909090909091, 0.8695652173913043]
+
+    - svm:
+    [0.9736842105263158, 0.9897909070809032, 0.9347826086956522]
+
+    - random_forest:
+    [0.9385964912280702, 0.975609756097561, 0.8695652173913043]
+
+1.4 - Para compara os classificadores foi usado o teste t não pareado, que 
+é uma técnica estatística usada para comparar as médias de duas amostras independentes e determinar 
+se existe uma diferença significativa entre elas.
+
+    Ao usar a classificação, foram obtidos os seguintes resultados:
+
+    Nenhuma diferença significativa entre 0 e 1 (p-valor: 0.3171265084483942)
+    Nenhuma diferença significativa entre 0 e 2 (p-valor: 0.079519846713961)
+    Diferença significativa entre 0 e 3 (p-valor: 0.03626701134127163)
+    Nenhuma diferença significativa entre 1 e 2 (p-valor: 0.5949562016295045)
+    Nenhuma diferença significativa entre 1 e 3 (p-valor: 0.41392096613702134)
+    Nenhuma diferença significativa entre 2 e 3 (p-valor: 0.6913209906201236)
+
+    Em que o modelo 0 é o svm, o 1 é a random forest, 2 o c4.5 e 3 é o id3.

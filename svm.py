@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score
 
 from cancer import X_normalized_df, y  
 
@@ -12,6 +12,10 @@ svm_model.fit(X_train, y_train)
 
 y_pred = svm_model.predict(X_test)
 
-accuracy = accuracy_score(y_test, y_pred)
+acuracia_svm = accuracy_score(y_test, y_pred)
 
-print("Acurácia do SVM:", accuracy)
+precisao_svm = precision_score(y_test, y_pred, pos_label='M')
+
+revocacao_svm = recall_score(y_test, y_pred, pos_label='M')
+
+print("Acurácia do SVM:", acuracia_svm)

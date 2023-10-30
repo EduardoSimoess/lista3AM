@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score
 
 from cancer import X_normalized_df, y 
 
@@ -12,6 +12,10 @@ c45_model.fit(X_train, y_train)
 
 y_pred = c45_model.predict(X_test)
 
-accuracy = accuracy_score(y_test, y_pred)
+acuracia_c45 = accuracy_score(y_test, y_pred)
 
-print("Acurácia do Modelo C4.5 (J48):", accuracy)
+precisao_c45 = precision_score(y_test, y_pred, pos_label='M')
+
+revocacao_c45 = recall_score(y_test, y_pred, pos_label='M')
+
+print("Acurácia do Modelo C4.5 (J48):", acuracia_c45)

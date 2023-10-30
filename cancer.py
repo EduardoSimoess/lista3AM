@@ -23,9 +23,9 @@ X_normalized = scaler.fit_transform(X)
 X_normalized_df = pd.DataFrame(X_normalized, columns=X.columns)
 
 # Exiba as features normalizadas
-print("Features Normalizadas:")
-print(X_normalized_df.head())
+#print("Features Normalizadas:")
+#print(X_normalized_df.head())
 
 # Exiba as classes (rótulos)
-print("Classes (rótulos):")
-print(y)
+#print("Classes (rótulos):")
+#print(y)
